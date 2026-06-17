@@ -1,0 +1,65 @@
+questions = [
+    {
+        "question": "What is the capital of India?",
+        "options": ["A. Mumbai", "B. Delhi", "C. Chennai", "D. Hyderabad"],
+        "answer": "B"
+    },
+    {
+        "question": "Which language is used for web development?",
+        "options": ["A. Python", "B. HTML", "C. Java", "D. C++"],
+        "answer": "B"
+    },
+    {
+        "question": "What does SQL stand for?",
+        "options": [
+            "A. Structured Query Language",
+            "B. Simple Query Language",
+            "C. Standard Question Language",
+            "D. Sequential Query Language"
+        ],
+        "answer": "A"
+    },
+    {
+        "question": "Which keyword is used to define a function in Python?",
+        "options": ["A. function", "B. define", "C. def", "D. fun"],
+        "answer": "C"
+    },
+    {
+        "question": "Which data structure stores key-value pairs?",
+        "options": ["A. List", "B. Tuple", "C. Set", "D. Dictionary"],
+        "answer": "D"
+    }
+]
+
+score = 0
+
+print("===== Python Quiz Application =====")
+
+for q in questions:
+
+    print("\n" + q["question"])
+
+    for option in q["options"]:
+        print(option)
+
+    user_answer = input("Enter Your Answer: ").upper()
+
+    if user_answer == q["answer"]:
+        print("Correct Answer!")
+        score += 1
+    else:
+        print("Wrong Answer!")
+
+total_questions = len(questions)
+
+percentage = (score / total_questions) * 100
+
+print("\n===== Quiz Result =====")
+print(f"Total Questions : {total_questions}")
+print(f"Correct Answers : {score}")
+print(f"Percentage      : {percentage:.2f}%")
+
+if percentage >= 40:
+    print("Result : PASS")
+else:
+    print("Result : FAIL")
